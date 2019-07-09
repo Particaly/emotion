@@ -1,6 +1,6 @@
 <template>
-	<div class="container">
-
+	<div class="component-left">
+		<div class="container"></div>
 	</div>
 </template>
 
@@ -10,8 +10,8 @@
 	}
 </script>
 
-<style scoped lang="scss">
-.container{
+<style scoped="scoped" lang="scss">
+.component-left{
 	width: 20%;
 	height: 100%;
 	border-right: 2px solid rgba(255,255,255,.7);

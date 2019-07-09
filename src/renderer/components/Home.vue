@@ -1,5 +1,5 @@
 <template>
-    <div class="container" :style="{background:mainfest&&mainfest.background}">
+    <div class="component-home" :style="{background:mainfest&&mainfest.background}">
 	    <Left></Left>
     </div>
 </template>
@@ -16,7 +16,7 @@
 	        }
 	    },
 	    components:{
-            Left
+            Left:Left
 	    },
         mounted() {
         	window.vue = this;
@@ -29,8 +29,29 @@
     }
 </script>
 
-<style scoped lang="scss">
-.container{
+<style scoped="scoped" lang="scss">
+.component-home{
+	width: 100%;
     height: 100%;
 }
+.container{
+	background: #000;
+	height: 100%;
+	width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*{}
 </style>

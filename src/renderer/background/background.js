@@ -36,10 +36,10 @@ class background{
 			if(err){throw err}
 		})
 	}
-	async ReadDataFromMainfest() {/*读取mainfest数据*/
+	ReadDataFromMainfest() {/*读取mainfest数据*/
 		let vm = this;
 		let res = '';
-		await fs.exists('./config/mainfest.json',function (isExist) {
+		fs.exists('./config/mainfest.json',function (isExist) {
 			if(isExist){
 				fs.readFile('./config/mainfest.json','utf-8',function(err,data){
 					if(err){throw err}else{
