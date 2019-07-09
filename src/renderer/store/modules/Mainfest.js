@@ -1,5 +1,7 @@
 const state = {
-  main: 0
+  mainfest: {
+  		background : 'rgba(10,10,10,0.7)'
+  }
 }
 
 const mutations = {
