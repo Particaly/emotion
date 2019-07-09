@@ -36,13 +36,15 @@ class background{
 			if(err){throw err}
 		})
 	}
-	ReadDataFromMainfest() {/*读取mainfest数据*/
+	async ReadDataFromMainfest() {/*读取mainfest数据*/
 		let vm = this;
-		fs.exists('./config/mainfest.json',function (isExist) {
+		let res = '';
+		await fs.exists('./config/mainfest.json',function (isExist) {
 			if(isExist){
 				fs.readFile('./config/mainfest.json','utf-8',function(err,data){
 					if(err){throw err}else{
-						console.log(data);
+						res = JSON.parse(data);
+						vm.vue.mainfest = res;
 					}
 				})
 			}else{
