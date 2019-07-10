@@ -20,9 +20,9 @@
 	    },
         mounted() {
         	window.vue = this;
-        	this.bg = new background(this)
-			this.bg.mainProcess()
-			this.bg.ReadDataFromMainfest()
+        	// let bg = new background(this);
+			// bg.mainProcess();
+			 console.log(this.$store.state.Mainfest);
         },
 	    methods:{
 	    }

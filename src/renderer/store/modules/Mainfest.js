@@ -1,23 +1,26 @@
 const state = {
-  mainfest: {
-  		background : 'rgba(10,10,10,0.7)'
-  }
+	mainfest: {
+		background : 'rgba(10,10,10,0.7)'
+	},
+	bg:null
 }
 
 const mutations = {
-  DECREMENT_MAIN_COUNTER (state) {
-    state.main--
-  },
-  INCREMENT_MAIN_COUNTER (state) {
-    state.main++
-  }
+	SetMainfest:function(state,param){
+	    state.mainfest = param;
+	},
+	Setbg:function(state,param){
+		state.mainfest = param;
+	},
 }
 
 const actions = {
-  someAsyncTask ({ commit }) {
-    // do something async
-    commit('INCREMENT_MAIN_COUNTER')
-  }
+	SetMainfest ({ commit },param) {
+		commit('SetMainfest',param)
+  	},
+	Setbg:function(state,param){
+		state.mainfest = param;
+	},
 }
 
 export default {
