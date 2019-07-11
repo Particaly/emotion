@@ -1,28 +1,28 @@
 <template>
-    <div class="component-home" :style="{background:mainfest&&mainfest.background}">
+    <div class="component-home" :style="{background:$store.state.Mainfest.mainfest.background}">
+	    <MenuToolbar></MenuToolbar>
 	    <Left></Left>
     </div>
 </template>
 
 <script>
 	import Left from './Left'
+	import MenuToolbar from './MenuToolbar'
 	import background from '../background/background'
     export default {
         name: "Home",
 	    data:function(){
 	        return {
-	            bg:null,
-				mainfest:null
+
 	        }
 	    },
 	    components:{
-            Left:Left
+            Left,MenuToolbar
 	    },
         mounted() {
         	window.vue = this;
-        	// let bg = new background(this);
-			// bg.mainProcess();
-			 console.log(this.$store.state.Mainfest);
+        	let bg = new background(this);
+			bg.mainProcess();
         },
 	    methods:{
 	    }
@@ -34,11 +34,7 @@
 	width: 100%;
     height: 100%;
 }
-.container{
-	background: #000;
-	height: 100%;
-	width: 100%;
-}
+
 
 
 

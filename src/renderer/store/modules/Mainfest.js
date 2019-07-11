@@ -1,6 +1,7 @@
 const state = {
 	mainfest: {
-		background : 'rgba(10,10,10,0.7)'
+		background : 'rgba(10,10,10,0.7)',
+		menuHeight : 50,
 	},
 	bg:null
 }

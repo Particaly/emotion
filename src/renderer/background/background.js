@@ -44,8 +44,7 @@ class background{
 				fs.readFile('./config/mainfest.json','utf-8',function(err,data){
 					if(err){throw err}else{
 						res = JSON.parse(data);
-						console.log(res);
-						//vm.vue.$store.dispatch('SetMainfest',res);
+						vm.vue.$store.dispatch('SetMainfest',res);
 					}
 				})
 			}else{
