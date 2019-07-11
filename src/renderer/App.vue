@@ -7,13 +7,17 @@
 export default {
 	name: 'emotion',
     beforeCreate(){
+	    let urls = __static;
+        if (process.env.NODE_ENV === 'development'){
+            urls = '../static'
+        }
         let ele1 = document.createElement('script')
         ele1.type="text/javascript"
-        ele1.setAttribute('src',`${__static}/js/wangEditer.js`)
+        ele1.setAttribute('src',`${urls}/js/wangEditer.js`)
         document.head.appendChild(ele1)
         let ele2 = document.createElement('link')
         ele2.setAttribute('rel','stylesheet')
-        ele2.setAttribute('href',`${__static}/css/iconfont.css`)
+        ele2.setAttribute('href',`${urls}/css/iconfont.css`)
         document.head.appendChild(ele2)
     },
     mounted:function(){
