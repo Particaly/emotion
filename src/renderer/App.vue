@@ -1,15 +1,22 @@
 <template>
   <div id="app">
-
     <router-view></router-view>
   </div>
 </template>
-
 <script>
 export default {
 	name: 'emotion',
+    beforeCreate(){
+        let ele1 = document.createElement('script')
+        ele1.type="text/javascript"
+        ele1.setAttribute('src',`${__static}/js/wangEditer.js`)
+        document.head.appendChild(ele1)
+        let ele2 = document.createElement('link')
+        ele2.setAttribute('rel','stylesheet')
+        ele2.setAttribute('href',`${__static}/css/iconfont.css`)
+        document.head.appendChild(ele2)
+    },
     mounted:function(){
-
     }
 }
 </script>
