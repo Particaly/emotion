@@ -157,7 +157,8 @@ if (process.env.NODE_ENV !== 'production') {
  */
 if (process.env.NODE_ENV === 'production') {
   rendererConfig.devtool = ''
-
+  let realstaticpath = path.join(__dirname, '../build/win-unpacked/resources/app.asar/dist/electron/static')
+	  .replace(/\\/g, '\\\\').replace(/\\/g, '\\\\')
   rendererConfig.plugins.push(
     new BabiliWebpackPlugin(),
     new CopyWebpackPlugin([
@@ -170,6 +171,9 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
     }),
+	new webpack.DefinePlugin({
+	  '__dirname': "'"+realstaticpath+"'"
+	}),
     new webpack.LoaderOptionsPlugin({
       minimize: true
     })

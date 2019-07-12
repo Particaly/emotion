@@ -9,6 +9,8 @@
         require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
       </script>
     <% } %>
+      <link rel="stylesheet" href="<%= (process.env.NODE_ENV !== 'development')?(__dirname+'/css/iconfont.css'):'../static/css/iconfont.css' %>">
+      <script src="<%= (process.env.NODE_ENV !== 'development')?(__dirname+'/js/wangEditer.js'):'../static/js/wangEditer.js' %>"></script>
   </head>
   <body>
     <div id="app"></div>
