@@ -1,5 +1,5 @@
 <template>
-	<div class="component-menu" :style="{height:height+'px'}">
+	<div class="component-menu" @click="showSet" :style="{height:height+'px'}">
 		<div class="set" :style="{lineHeight:height-5+'px'}"><i class="iconfont icon-shezhi"></i>设置</div>
 		<div class="bottom" :style="{top:height+'px'}" @mousedown="checkHold" @mouseup="resetHold"><div class="bottom-border"></div></div>
 	</div>
@@ -17,6 +17,7 @@
 		methods:{
 		    checkHold:function(){
 				this.hold = true;
+				this.$emit('hold','ns-resize')
 				window.addEventListener('mousemove',this.changeHeight)
 		    },
 			changeHeight:function(e){
@@ -26,7 +27,11 @@
 			},
 			resetHold:function () {
 				this.hold = false;
+				this.$emit('hold','')
 				window.removeEventListener('mousemove',this.changeHeight)
+			},
+			showSet:function(){
+
 			}
 		}
 	}
